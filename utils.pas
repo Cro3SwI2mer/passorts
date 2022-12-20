@@ -7,6 +7,7 @@ uses sysutils, custypes;
 function default_nats(var len : longint): nats;
 function random_nats(var len : longint;
 					 var max : longint): nats;
+procedure shuffle_nats(var arr : nats);
 
 function default_studs(var len : longint): studs;
 
@@ -64,6 +65,18 @@ function random_nats(var len : longint;
 						arr[i] := random(max) + 1;
 					end;
 				result := arr;
+			end;
+	end;
+
+procedure shuffle_nats(var arr : nats);
+	var
+		i, ri : longint;
+	begin
+		randomize;
+		for i := 0 to high(arr) do
+			begin
+				ri := random(high(arr));
+				swap_nat(arr[i], arr[ri]);
 			end;
 	end;
 

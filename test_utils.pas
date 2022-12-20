@@ -74,7 +74,14 @@ procedure utils_test;
 		write('First student: '); print_stud(s1);
 		write('Second student: '); print_stud(s2);
 
-		writeln('')
+		writeln('');
+		
+		write('Initial nats: '); print_nats(nats3, len_nats); writeln('');
+		shuffle_nats(nats3);
+		write('Shuffled nats: '); print_nats(nats3, len_nats); writeln('');
+
+		writeln('');
+
 	end;
 
 end.
